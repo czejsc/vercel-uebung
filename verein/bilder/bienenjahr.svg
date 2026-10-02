@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img"
+     aria-label="Ringdiagramm des Bienenjahres: die zwölf Monate sind nach Winterruhe, Frühjahrsaufbau, Schwarmzeit, Ernte und Einwintern eingefärbt.">
+  <title>Das Bienenjahr</title>
+  <g font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="600"
+     text-anchor="middle" stroke="none">
+    <path d="M263.14 60.02 A200 200 0 0 1 357.27 85.25 L321.28 149.9 A126 126 0 0 0 261.98 134.02 Z" fill="#F0E2C6"/>
+    <text x="302.19" y="108.55" fill="#2A1F14">Jan</text>
+    <path d="M362.71 88.39 A200 200 0 0 1 431.61 157.29 L368.12 195.29 A126 126 0 0 0 324.71 151.88 Z" fill="#F0E2C6"/>
+    <text x="375.26" y="150.74" fill="#2A1F14">Feb</text>
+    <path d="M434.75 162.73 A200 200 0 0 1 459.98 256.86 L385.98 258.02 A126 126 0 0 0 370.1 198.72 Z" fill="#E8B861"/>
+    <text x="417.45" y="223.81" fill="#2A1F14">Mär</text>
+    <path d="M459.98 263.14 A200 200 0 0 1 434.75 357.27 L370.1 321.28 A126 126 0 0 0 385.98 261.98 Z" fill="#E8B861"/>
+    <text x="417.45" y="308.19" fill="#2A1F14">Apr</text>
+    <path d="M431.61 362.71 A200 200 0 0 1 362.71 431.61 L324.71 368.12 A126 126 0 0 0 368.12 324.71 Z" fill="#DF9821"/>
+    <text x="375.26" y="381.26" fill="#2A1F14">Mai</text>
+    <path d="M357.27 434.75 A200 200 0 0 1 263.14 459.98 L261.98 385.98 A126 126 0 0 0 321.28 370.1 Z" fill="#DF9821"/>
+    <text x="302.19" y="423.45" fill="#2A1F14">Jun</text>
+    <path d="M256.86 459.98 A200 200 0 0 1 162.73 434.75 L198.72 370.1 A126 126 0 0 0 258.02 385.98 Z" fill="#A96A0E"/>
+    <text x="217.81" y="423.45" fill="#FFFFFF">Jul</text>
+    <path d="M157.29 431.61 A200 200 0 0 1 88.39 362.71 L151.88 324.71 A126 126 0 0 0 195.29 368.12 Z" fill="#6F8A58"/>
+    <text x="144.74" y="381.26" fill="#FFFFFF">Aug</text>
+    <path d="M85.25 357.27 A200 200 0 0 1 60.02 263.14 L134.02 261.98 A126 126 0 0 0 149.9 321.28 Z" fill="#6F8A58"/>
+    <text x="102.55" y="308.19" fill="#FFFFFF">Sep</text>
+    <path d="M60.02 256.86 A200 200 0 0 1 85.25 162.73 L149.9 198.72 A126 126 0 0 0 134.02 258.02 Z" fill="#6F8A58"/>
+    <text x="102.55" y="223.81" fill="#FFFFFF">Okt</text>
+    <path d="M88.39 157.29 A200 200 0 0 1 157.29 88.39 L195.29 151.88 A126 126 0 0 0 151.88 195.29 Z" fill="#F0E2C6"/>
+    <text x="144.74" y="150.74" fill="#2A1F14">Nov</text>
+    <path d="M162.73 85.25 A200 200 0 0 1 256.86 60.02 L258.02 134.02 A126 126 0 0 0 198.72 149.9 Z" fill="#F0E2C6"/>
+    <text x="217.81" y="108.55" fill="#2A1F14">Dez</text>
+  </g>
+  <circle cx="260" cy="260" r="112" fill="#FBF6EC"/>
+  <text x="260" y="248" text-anchor="middle" font-family="Fraunces, Georgia, serif"
+        font-size="32" font-weight="600" fill="#2A1F14">Bienen-</text>
+  <text x="260" y="282" text-anchor="middle" font-family="Fraunces, Georgia, serif"
+        font-size="32" font-weight="600" fill="#2A1F14">jahr</text>
+  <text x="260" y="310" text-anchor="middle" font-family="Inter, system-ui, sans-serif"
+        font-size="14" fill="#6E5D48">ein Volk, zwölf Monate</text>
+</svg>

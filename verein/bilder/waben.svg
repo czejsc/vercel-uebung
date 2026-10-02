@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.32" height="30" viewBox="0 0 17.32 30">
+  <!-- Kachelbares Wabenmuster (spitz oben), Periode 17.32 x 30.
+       Wird in stil.css als wiederholter Hintergrund verwendet. -->
+  <g fill="none" stroke="#C9A063" stroke-opacity=".40" stroke-width=".9">
+    <!-- senkrechte Kanten -->
+    <path d="M0 5V15"/>
+    <path d="M17.32 5V15"/>
+    <path d="M8.66 20V30"/>
+    <!-- schraege Kanten -->
+    <path d="M0 5 8.66 0 17.32 5"/>
+    <path d="M0 15 8.66 20 17.32 15"/>
+  </g>
+</svg>

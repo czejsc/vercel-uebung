@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img"
+     aria-label="Illustration: drei Bienenstöcke auf einer Wiese unter weitem Himmel, davor blühende Blumen">
+  <title>Lehrbienenstand am Mühlenweg</title>
+  <defs>
+    <linearGradient id="himmel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6E7C8"/>
+      <stop offset="1" stop-color="#FBF6EC"/>
+    </linearGradient>
+    <clipPath id="rahmen"><rect width="800" height="440" rx="2"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#rahmen)">
+    <rect width="800" height="440" fill="url(#himmel)"/>
+    <circle cx="648" cy="104" r="46" fill="#DF9821" opacity=".22"/>
+    <circle cx="648" cy="104" r="27" fill="#DF9821"/>
+
+    <!-- Huegelstaffelung -->
+    <path d="M0 286c120-34 198 14 300-6s180-52 300-26 200 36 200 36v150H0Z" fill="#8FA07A" opacity=".5"/>
+    <path d="M0 322c140-26 236 16 352 2s196-38 448-12v128H0Z" fill="#6F8A58"/>
+    <path d="M0 362c180-18 286 20 420 8s232-22 380-8v78H0Z" fill="#48663A"/>
+
+    <!-- Bienenstoecke: Boden, Korpus, Deckel, Flugloch -->
+    <g>
+      <g transform="translate(168 236)">
+        <rect x="-6" y="118" width="100" height="9" rx="3" fill="#3E2E1C"/>
+        <rect y="30" width="88" height="88" rx="3" fill="#F0E2C6" stroke="#C9A063" stroke-width="2"/>
+        <path d="M0 68h88M0 96h88" stroke="#C9A063" stroke-width="1.6"/>
+        <rect x="-9" y="12" width="106" height="20" rx="4" fill="#A96A0E"/>
+        <rect x="30" y="104" width="28" height="7" rx="3.5" fill="#2A1F14"/>
+      </g>
+      <g transform="translate(306 258)">
+        <rect x="-6" y="96" width="100" height="9" rx="3" fill="#3E2E1C"/>
+        <rect y="26" width="88" height="70" rx="3" fill="#FBF6EC" stroke="#C9A063" stroke-width="2"/>
+        <path d="M0 60h88" stroke="#C9A063" stroke-width="1.6"/>
+        <rect x="-9" y="8" width="106" height="20" rx="4" fill="#A96A0E"/>
+        <rect x="30" y="82" width="28" height="7" rx="3.5" fill="#2A1F14"/>
+      </g>
+      <g transform="translate(444 246)">
+        <rect x="-6" y="108" width="100" height="9" rx="3" fill="#3E2E1C"/>
+        <rect y="28" width="88" height="80" rx="3" fill="#E6D7B4" stroke="#C9A063" stroke-width="2"/>
+        <path d="M0 62h88M0 88h88" stroke="#C9A063" stroke-width="1.6"/>
+        <rect x="-9" y="10" width="106" height="20" rx="4" fill="#A96A0E"/>
+        <rect x="30" y="94" width="28" height="7" rx="3.5" fill="#2A1F14"/>
+      </g>
+    </g>
+
+    <!-- Blumen im Vordergrund -->
+    <g stroke="#2F4426" stroke-width="3" stroke-linecap="round">
+      <path d="M92 440v-62M126 440v-44M640 440v-54M676 440v-40M716 440v-58"/>
+    </g>
+    <g fill="#DF9821">
+      <circle cx="92" cy="372" r="11"/><circle cx="126" cy="390" r="9"/>
+      <circle cx="640" cy="380" r="10"/><circle cx="676" cy="394" r="8"/><circle cx="716" cy="376" r="11"/>
+    </g>
+    <g fill="#FBF6EC">
+      <circle cx="92" cy="372" r="4"/><circle cx="640" cy="380" r="3.5"/><circle cx="716" cy="376" r="4"/>
+    </g>
+
+    <!-- Flugbahnen -->
+    <g fill="none" stroke="#2A1F14" stroke-width="2" stroke-dasharray="4 8" stroke-linecap="round" opacity=".45">
+      <path d="M246 212c44-34 96-8 128-44"/>
+      <path d="M402 290c38 26 92 2 120-36"/>
+      <path d="M556 204c40-28 70 4 104-18"/>
+    </g>
+    <!-- Bienen -->
+    <g fill="#2A1F14">
+      <ellipse cx="246" cy="212" rx="6" ry="4.4"/>
+      <ellipse cx="402" cy="290" rx="6" ry="4.4"/>
+      <ellipse cx="556" cy="204" rx="6" ry="4.4"/>
+    </g>
+    <g fill="#DF9821">
+      <rect x="244" y="208.4" width="2.4" height="7.2" rx="1"/>
+      <rect x="400" y="286.4" width="2.4" height="7.2" rx="1"/>
+      <rect x="554" y="200.4" width="2.4" height="7.2" rx="1"/>
+    </g>
+  </g>
+</svg>

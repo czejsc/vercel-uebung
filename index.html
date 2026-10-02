@@ -24,6 +24,8 @@
   dd { margin:0; font-weight:700; }
   .ok { color:var(--signal); }
   .fehler { color:#B3261E; font-weight:700; margin-top:1.5em; }
+  .weiter { margin:2.5em 0 0; padding-top:1.5em; border-top:2px solid var(--line); font-size:1.05rem; }
+  .weiter a { color:var(--ink); font-weight:700; text-underline-offset:4px; }
   figure { margin:0 0 2em; }
   figure img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:10px; }
   figcaption { font-size:.95rem; color:var(--steel); margin-top:.7em; }
@@ -39,6 +41,7 @@
   </figure>
   <button id="frage">Server fragen</button>
   <div id="ausgabe" aria-live="polite"></div>
+  <p class="weiter"><a href="verein/index.html">Beispielseite ansehen: Imkerverein Beispielhausen →</a></p>
 </main>
 <script>
   const knopf = document.getElementById('frage');

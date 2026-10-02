@@ -1,0 +1,278 @@
+@charset "UTF-8";
+/* Imkerverein Beispielhausen e.V. - gemeinsames Stylesheet fuer alle Seiten */
+
+:root {
+  color-scheme: light;
+  --creme:    #FBF6EC;
+  --creme-2:  #F4EADA;
+  --karte:    #FFFFFF;
+  --holz:     #2A1F14;
+  --weich:    #6E5D48;
+  --honig:    #DF9821;
+  --honig-t:  #A96A0E;
+  --wiese:    #48663A;
+  --linie:    #E4D7BF;
+  --warn:     #A32314;
+  --schatten: 0 1px 2px rgba(42,31,20,.05), 0 10px 30px -16px rgba(42,31,20,.28);
+  --mass:     70rem;
+  --rund:     14px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--holz);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .marke-text {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -.015em;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(2.1rem, 5.6vw, 3.6rem); margin: 0 0 .5em; }
+h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 0 0 .6em; }
+h3 { font-size: 1.2rem; margin: 0 0 .4em; letter-spacing: -.005em; }
+p  { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--honig-t); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--holz); }
+
+:focus-visible { outline: 3px solid var(--wiese); outline-offset: 3px; border-radius: 3px; }
+
+img, svg { max-width: 100%; }
+
+/* ---------- Grundgeruest ---------- */
+
+.wrap { width: 100%; max-width: var(--mass); margin-inline: auto; padding-inline: clamp(18px, 5vw, 36px); }
+
+.band { padding-block: clamp(48px, 8vw, 86px); }
+.band--creme { background: var(--creme-2); }
+.band--holz  { background: var(--holz); color: var(--creme); }
+.band--holz h2 { color: #fff; }
+.band--holz a { color: var(--honig); }
+
+.lead { font-size: clamp(1.1rem, 2.1vw, 1.3rem); line-height: 1.5; color: var(--weich); max-width: 36em; }
+.band--holz .lead { color: #D9CDB9; }
+
+.kicker {
+  font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--honig-t); margin: 0 0 1.1em;
+}
+
+.springen {
+  position: absolute; left: 12px; top: -60px; z-index: 20;
+  background: var(--holz); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 8px;
+  text-decoration: none; transition: top .15s;
+}
+.springen:focus { top: 0; color: #fff; }
+
+/* ---------- Kopf und Navigation ---------- */
+
+.kopf {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(251,246,236,.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linie);
+}
+.kopf-inner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px;
+  padding-block: 12px;
+}
+.marke { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--holz); margin-right: auto; }
+.marke:hover { color: var(--holz); }
+.marke svg { width: 30px; height: 34px; flex: none; }
+.marke-text { font-size: 1.12rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.15; }
+.marke-text small { display: block; font: 400 .72rem/1.2 Inter, system-ui, sans-serif; color: var(--weich); letter-spacing: .04em; }
+
+.nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.nav a {
+  display: block; padding: 8px 13px; border-radius: 8px;
+  font-size: .97rem; font-weight: 500; color: var(--weich); text-decoration: none;
+}
+.nav a:hover { background: var(--creme-2); color: var(--holz); }
+.nav a[aria-current="page"] { background: var(--holz); color: #fff; }
+
+/* ---------- Held und Seitenkopf ---------- */
+
+.held {
+  background:
+    url("bilder/waben.svg") repeat,
+    linear-gradient(170deg, #FDF9F1, var(--creme-2));
+  background-size: 52px auto, auto;
+  border-bottom: 1px solid var(--linie);
+  padding-block: clamp(56px, 11vw, 112px);
+}
+.held h1 { max-width: 20em; }
+.held .lead { margin-bottom: 2em; }
+
+.seitenkopf {
+  background: var(--creme-2);
+  border-bottom: 1px solid var(--linie);
+  padding-block: clamp(40px, 7vw, 72px);
+}
+.seitenkopf h1 { margin-bottom: .35em; }
+
+/* ---------- Knoepfe ---------- */
+
+.knopfreihe { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.knopf, button.knopf {
+  display: inline-block; font: inherit; font-weight: 600;
+  padding: 13px 24px; border-radius: 9px; border: 2px solid var(--holz);
+  background: var(--holz); color: #fff; text-decoration: none; cursor: pointer;
+}
+.knopf:hover { background: #3C2C1C; color: #fff; border-color: #3C2C1C; }
+.knopf--honig { background: var(--honig); border-color: var(--honig); color: var(--holz); }
+.knopf--honig:hover { background: var(--honig-t); border-color: var(--honig-t); color: #fff; }
+.knopf--leer { background: transparent; color: var(--holz); }
+.knopf--leer:hover { background: var(--holz); color: #fff; }
+.knopf[disabled] { opacity: .55; cursor: wait; }
+
+/* ---------- Gitter, Karten ---------- */
+
+.gitter { display: grid; gap: clamp(16px, 2.6vw, 26px); }
+.gitter--3 { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.gitter--2 { grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+.gitter--text { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); align-items: start; gap: clamp(24px, 5vw, 56px); }
+@media (max-width: 54rem) { .gitter--text { grid-template-columns: 1fr; } }
+
+.karte {
+  background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund);
+  padding: clamp(20px, 2.6vw, 28px); box-shadow: var(--schatten);
+  display: flex; flex-direction: column; gap: .2em;
+}
+.karte .wabe { width: 34px; height: 38px; margin-bottom: .7em; }
+.karte p { color: var(--weich); }
+.karte .mehr { margin-top: auto; padding-top: 1em; font-weight: 600; text-decoration: none; }
+.karte .mehr:hover { text-decoration: underline; }
+.karte .mehr::after { content: " \2192"; }
+
+.preis { font-family: Fraunces, Georgia, serif; font-size: 1.9rem; font-weight: 600; color: var(--honig-t); }
+.preis small { font: 400 .95rem Inter, system-ui, sans-serif; color: var(--weich); }
+
+/* ---------- Zahlen ---------- */
+
+.zahlen { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 8px 28px; margin: 0; }
+.zahlen > div { padding: 18px 0; border-top: 2px solid var(--honig); }
+.zahlen dt { font-size: .85rem; letter-spacing: .09em; text-transform: uppercase; color: var(--weich); }
+.band--holz .zahlen dt { color: #B8A88F; }
+.zahlen dd { margin: .15em 0 0; font-family: Fraunces, Georgia, serif; font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 600; }
+
+/* ---------- Termine ---------- */
+
+.termine { list-style: none; margin: 0; padding: 0; }
+.termine li { display: flex; gap: clamp(14px, 2.4vw, 26px); padding: 20px 0; border-top: 1px solid var(--linie); }
+.termine li:last-child { border-bottom: 1px solid var(--linie); }
+.datum {
+  flex: none; width: 62px; text-align: center; padding: 7px 0; border-radius: 10px;
+  background: var(--honig); color: var(--holz);
+}
+.datum .tag   { display: block; font-family: Fraunces, Georgia, serif; font-size: 1.5rem; font-weight: 600; line-height: 1; }
+.datum .monat { display: block; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.termine p { color: var(--weich); margin: .2em 0 0; }
+.termine .wo { font-size: .9rem; }
+
+/* ---------- Zeitstrahl ---------- */
+
+.strahl { list-style: none; margin: 0; padding: 0 0 0 34px; border-left: 2px solid var(--linie); }
+.strahl li { position: relative; padding: 0 0 2em; }
+.strahl li::before {
+  content: ""; position: absolute; left: -42px; top: .45em;
+  width: 15px; height: 15px; border-radius: 50%; background: var(--honig); border: 3px solid var(--creme);
+}
+.strahl .jahr { display: block; font-family: Fraunces, Georgia, serif; font-weight: 600; color: var(--honig-t); font-size: 1.05rem; }
+.strahl p { color: var(--weich); margin: .15em 0 0; }
+
+/* ---------- Tabellen ---------- */
+
+.tabelle { width: 100%; border-collapse: collapse; text-align: left; }
+.tabelle caption { text-align: left; color: var(--weich); font-size: .95rem; padding-bottom: .8em; }
+.tabelle th, .tabelle td { padding: 13px 14px; border-bottom: 1px solid var(--linie); vertical-align: top; }
+.tabelle th { font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: var(--weich); font-weight: 600; }
+.tabelle td:last-child { font-weight: 600; white-space: nowrap; }
+.tabellenrahmen { overflow-x: auto; }
+
+/* ---------- Personen ---------- */
+
+.personen { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.personen li { background: var(--karte); border: 1px solid var(--linie); border-radius: var(--rund); padding: 20px; }
+.personen .rolle { font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: var(--honig-t); font-weight: 600; }
+.personen .name { font-family: Fraunces, Georgia, serif; font-size: 1.15rem; font-weight: 600; margin: .2em 0 .3em; }
+.personen p { font-size: .95rem; color: var(--weich); }
+
+/* ---------- Fragen ---------- */
+
+.fragen { border-top: 1px solid var(--linie); }
+.fragen details { border-bottom: 1px solid var(--linie); }
+.fragen summary {
+  padding: 18px 2px; cursor: pointer; font-weight: 600; font-size: 1.05rem;
+  display: flex; justify-content: space-between; gap: 16px; align-items: baseline;
+}
+.fragen summary::-webkit-details-marker { display: none; }
+.fragen summary::marker { content: ""; }
+.fragen summary::after { content: "+"; font-family: Fraunces, Georgia, serif; font-size: 1.5rem; color: var(--honig-t); line-height: 1; }
+.fragen details[open] summary::after { content: "\2013"; }
+.fragen details > :not(summary) { color: var(--weich); margin: 0 0 1.3em; max-width: 46em; padding-inline: 2px; }
+
+/* ---------- Formular ---------- */
+
+.formular { display: grid; gap: 18px; max-width: 34rem; }
+.feld { display: grid; gap: 6px; }
+.feld label { font-weight: 600; font-size: .97rem; }
+.feld .hinweis { font-size: .87rem; color: var(--weich); font-weight: 400; }
+.feld input, .feld select, .feld textarea {
+  font: inherit; color: var(--holz); background: var(--karte);
+  border: 1.5px solid var(--linie); border-radius: 9px; padding: 11px 13px; width: 100%;
+}
+.feld textarea { min-height: 9em; resize: vertical; }
+.feld input:focus, .feld select:focus, .feld textarea:focus { border-color: var(--wiese); }
+.feld--kasten { grid-template-columns: auto 1fr; align-items: start; gap: 11px; }
+.feld--kasten input { width: 1.15rem; height: 1.15rem; margin-top: .3em; accent-color: var(--wiese); }
+.feld--kasten label { font-weight: 400; font-size: .95rem; color: var(--weich); }
+.falle { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.meldung { border-radius: var(--rund); padding: 16px 18px; border: 1.5px solid; margin: 0; }
+.meldung--gut { background: #EEF5E9; border-color: var(--wiese); color: #2C4420; }
+.meldung--schlecht { background: #FBEDEB; border-color: var(--warn); color: #7C1A0F; }
+.meldung strong { display: block; margin-bottom: .2em; }
+.meldung ul { margin: .4em 0 0; padding-left: 1.2em; }
+
+/* ---------- Infoliste ---------- */
+
+.infos { margin: 0; display: grid; gap: 2px; }
+.infos dt { font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: var(--weich); margin-top: 1.1em; }
+.infos dd { margin: 0; font-weight: 500; }
+.infos dt:first-of-type { margin-top: 0; }
+
+figure { margin: 0; }
+figcaption { font-size: .92rem; color: var(--weich); margin-top: .8em; }
+
+.bild-rahmen { border: 1px solid var(--linie); border-radius: var(--rund); overflow: hidden; background: var(--karte); box-shadow: var(--schatten); }
+.bild-rahmen img { display: block; width: 100%; height: auto; }
+
+/* ---------- Fuss ---------- */
+
+.fuss { background: var(--holz); color: #C9BBA5; padding-block: clamp(42px, 6vw, 64px) 26px; }
+.fuss h2 { font-size: 1rem; font-family: Inter, system-ui, sans-serif; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: #fff; margin-bottom: .9em; }
+.fuss-gitter { display: grid; gap: clamp(26px, 4vw, 48px); grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.fuss a { color: #EBD9BC; }
+.fuss a:hover { color: #fff; }
+.fuss ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45em; }
+.fuss address { font-style: normal; }
+.fuss-schluss {
+  border-top: 1px solid #443524; margin-top: clamp(30px, 4vw, 46px); padding-top: 20px;
+  display: flex; flex-wrap: wrap; gap: 8px 26px; font-size: .9rem; color: #9C8C76;
+}
+.fuss-schluss p { margin: 0; }

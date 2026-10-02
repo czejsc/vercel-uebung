@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt &amp; Mitgliedschaft – Imkerverein Beispielhausen e.&nbsp;V.</title>
+<meta name="description" content="Kontaktformular, Anfahrt und Ansprechpartner des Imkervereins Beispielhausen e. V. – Mitglied werden oder einen Kursplatz anfragen.">
+<link rel="icon" href="bilder/waben.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<a class="springen" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="kopf">
+  <div class="wrap kopf-inner">
+    <a class="marke" href="index.html">
+      <svg viewBox="0 0 32 36" aria-hidden="true" focusable="false">
+        <path d="M16 1 30.2 9.3v17.4L16 35 1.8 26.7V9.3Z" fill="#DF9821"/>
+        <path d="M5.5 14h21M4.5 20h23M7 26h18" stroke="#2A1F14" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="marke-text">Imkerverein Beispielhausen
+        <small>e.&nbsp;V. &middot; seit 1964</small></span>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="index.html">Start</a>
+      <a href="verein.html">Verein</a>
+      <a href="kurse.html">Kurse &amp; Angebote</a>
+      <a href="kontakt.html" aria-current="page">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+
+  <section class="seitenkopf">
+    <div class="wrap">
+      <p class="kicker">Kontakt &amp; Mitgliedschaft</p>
+      <h1>Schreib uns – oder komm samstags einfach vorbei.</h1>
+      <p class="lead">Wir sind ein Verein, kein Büro: Antworten kommen abends und am Wochenende,
+        in der Regel innerhalb von drei Tagen.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap gitter gitter--text">
+
+      <div>
+        <h2>Nachricht senden</h2>
+        <p style="color:var(--weich); margin-bottom:1.8em">Alle Felder mit&nbsp;* sind nötig,
+          damit wir antworten können.</p>
+
+        <form class="formular" id="kontaktformular" action="/api/kontakt" method="post" novalidate>
+          <div class="feld">
+            <label for="name">Name *</label>
+            <input id="name" name="name" type="text" autocomplete="name" required maxlength="80">
+          </div>
+
+          <div class="feld">
+            <label for="email">E-Mail *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="120"
+                   inputmode="email">
+          </div>
+
+          <div class="feld">
+            <label for="thema">Worum geht es? *</label>
+            <select id="thema" name="thema" required>
+              <option value="mitgliedschaft">Mitglied werden</option>
+              <option value="imkerkurs">Imkerkurs im Jahreslauf</option>
+              <option value="patenschaft">Bienenpatenschaft</option>
+              <option value="honig">Honig kaufen</option>
+              <option value="schule">Termin für Schule oder Kita</option>
+              <option value="schwarm">Schwarm melden</option>
+              <option value="sonstiges">Etwas anderes</option>
+            </select>
+          </div>
+
+          <div class="feld">
+            <label for="nachricht">Nachricht *
+              <span class="hinweis">Bei einem Schwarm: Adresse, Höhe und seit wann er hängt.</span>
+            </label>
+            <textarea id="nachricht" name="nachricht" required minlength="10" maxlength="2000"></textarea>
+          </div>
+
+          <div class="feld feld--kasten">
+            <input id="einwilligung" name="einwilligung" type="checkbox" required value="ja">
+            <label for="einwilligung">Meine Angaben dürfen gespeichert und zur Beantwortung
+              verwendet werden. Weitergabe findet nicht statt.</label>
+          </div>
+
+          <!-- Honigfalle gegen Formular-Spam: echte Menschen sehen das Feld nicht -->
+          <div class="falle" aria-hidden="true">
+            <label for="webseite">Webseite</label>
+            <input id="webseite" name="webseite" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div>
+            <button class="knopf knopf--honig" type="submit">Nachricht senden</button>
+          </div>
+
+          <div id="rueckmeldung" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div>
+        <h2>Direkt erreichbar</h2>
+        <dl class="infos" style="margin-bottom:2.4em">
+          <dt>Anschrift</dt>
+          <dd>Imkerverein Beispielhausen e.&nbsp;V.<br>Mühlenweg 8<br>12345 Beispielhausen</dd>
+          <dt>E-Mail</dt>
+          <dd><a href="mailto:vorstand@beispielverein.example">vorstand@beispielverein.example</a></dd>
+          <dt>Telefon</dt>
+          <dd><a href="tel:+4930000000">030 000000</a> &middot; Mo–Fr ab 18 Uhr</dd>
+          <dt>Mitgliedschaft &amp; Presse</dt>
+          <dd>Hannelore Weber</dd>
+          <dt>Kurse &amp; Lehrbienenstand</dt>
+          <dd>Tarek Osman</dd>
+          <dt>Schwarm-Hotline Mai bis Juli</dt>
+          <dd><a href="tel:+4930000001">030 000001</a> &middot; täglich 8–20 Uhr</dd>
+        </dl>
+
+        <h2>Anfahrt</h2>
+        <p style="color:var(--weich)">Der Lehrbienenstand liegt am Ende des Mühlenwegs hinter
+          dem Sportplatz. Das Vereinsheim ist das kleine Holzgebäude links, der Stand
+          dahinter am Hang.</p>
+        <dl class="infos" style="margin-top:1.4em">
+          <dt>Mit dem Bus</dt>
+          <dd>Linie 412 bis <em>Beispielhausen Sportplatz</em>, dann 300&nbsp;m zu Fuß</dd>
+          <dt>Mit dem Auto</dt>
+          <dd>Parkplatz am Sportplatz, von dort beschildert</dd>
+          <dt>Mit dem Rad</dt>
+          <dd>Radweg entlang der Au, Abzweig am Wehr</dd>
+          <dt>Barrierefreiheit</dt>
+          <dd>Vereinsheim und Schaukasten sind ebenerdig erreichbar, der Weg zum Stand
+            ist geschottert und leicht steigend</dd>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="band band--creme">
+    <div class="wrap">
+      <h2>Mitglied werden in drei Schritten</h2>
+      <div class="gitter gitter--3" style="margin-top:2em">
+        <article class="karte">
+          <p class="kicker" style="margin:0 0 .6em">Schritt 1</p>
+          <h3>Vorbeikommen</h3>
+          <p>Samstags zwischen 10 und 13 Uhr am Lehrbienenstand. Schau dir an, was dich
+            erwartet, und frag alles, was du wissen willst.</p>
+        </article>
+        <article class="karte">
+          <p class="kicker" style="margin:0 0 .6em">Schritt 2</p>
+          <h3>Formular ausfüllen</h3>
+          <p>Über dieses Kontaktformular oder auf Papier im Vereinsheim. Wir melden uns mit
+            dem Aufnahmeantrag und dem SEPA-Mandat.</p>
+        </article>
+        <article class="karte">
+          <p class="kicker" style="margin:0 0 .6em">Schritt 3</p>
+          <h3>Aufnahme</h3>
+          <p>Der Vorstand nimmt bei der nächsten Sitzung auf – das dauert höchstens vier
+            Wochen. Versicherung und Gerätenutzung gelten ab dem Tag danach.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--holz">
+    <div class="wrap">
+      <h2>Datenschutz, kurz gefasst</h2>
+      <p class="lead">Was du im Formular einträgst, nutzen wir ausschließlich, um deine Anfrage
+        zu beantworten. Wir geben nichts weiter, verschicken keinen Newsletter und löschen
+        Anfragen nach sechs Monaten. Ein Tracking-Werkzeug ist auf dieser Seite nicht
+        eingebaut.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <div class="wrap">
+    <div class="fuss-gitter">
+      <div>
+        <h2>Imkerverein Beispielhausen e.&nbsp;V.</h2>
+        <address>
+          Mühlenweg 8<br>
+          12345 Beispielhausen<br>
+          <a href="mailto:vorstand@beispielverein.example">vorstand@beispielverein.example</a><br>
+          <a href="tel:+4930000000">030 000000</a>
+        </address>
+      </div>
+      <div>
+        <h2>Seiten</h2>
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="verein.html">Der Verein</a></li>
+          <li><a href="kurse.html">Kurse &amp; Angebote</a></li>
+          <li><a href="kontakt.html">Kontakt &amp; Mitgliedschaft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Lehrbienenstand</h2>
+        <p>April bis September<br>samstags 10–13 Uhr</p>
+        <p style="margin-top:.7em">Oktober bis März<br>nach Absprache</p>
+      </div>
+    </div>
+    <div class="fuss-schluss">
+      <p>Beispielseite – frei erfundener Verein, erfundene Daten.</p>
+      <p>Registergericht Musterau, VR 1234</p>
+      <p><a href="../index.html">Zurück zur Vercel-Übung</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const formular = document.getElementById('kontaktformular');
+  const auswahl = document.getElementById('thema');
+  const ausgabe = document.getElementById('rueckmeldung');
+  const knopf = formular.querySelector('button[type="submit"]');
+
+  // Thema aus der Adresse vorbelegen, z. B. kontakt.html?thema=imkerkurs
+  const gewuenscht = new URLSearchParams(location.search).get('thema');
+  if (gewuenscht && [...auswahl.options].some(o => o.value === gewuenscht)) {
+    auswahl.value = gewuenscht;
+  }
+
+  const text = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function melden(art, titel, zeilen) {
+    ausgabe.innerHTML =
+      '<p class="meldung meldung--' + art + '"><strong>' + text(titel) + '</strong>' +
+      (zeilen.length === 1
+        ? text(zeilen[0])
+        : '<ul>' + zeilen.map(z => '<li>' + text(z) + '</li>').join('') + '</ul>') +
+      '</p>';
+  }
+
+  formular.addEventListener('submit', async event => {
+    event.preventDefault();
+    ausgabe.innerHTML = '';
+
+    if (!formular.checkValidity()) {
+      formular.reportValidity();
+      return;
+    }
+
+    knopf.disabled = true;
+    knopf.textContent = 'Wird gesendet …';
+
+    try {
+      const antwort = await fetch('/api/kontakt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(formular)))
+      });
+      const daten = await antwort.json().catch(() => ({}));
+
+      if (antwort.ok) {
+        melden('gut', 'Danke, die Nachricht ist angekommen.',
+          ['Wir antworten an ' + (daten.bestaetigtAn || 'deine Adresse') +
+           ', meist innerhalb von drei Tagen. Vorgangsnummer: ' + (daten.vorgang || '–') + '.']);
+        formular.reset();
+      } else if (Array.isArray(daten.fehler) && daten.fehler.length) {
+        melden('schlecht', 'Bitte noch einmal prüfen:', daten.fehler);
+      } else {
+        melden('schlecht', 'Das hat nicht funktioniert.',
+          ['Der Server hat mit Status ' + antwort.status + ' geantwortet. Bitte später erneut ' +
+           'versuchen oder direkt an vorstand@beispielverein.example schreiben.']);
+      }
+    } catch (fehler) {
+      melden('schlecht', 'Keine Verbindung zum Server.',
+        ['Lokal ohne „vercel dev“ gibt es /api/kontakt nicht (' + fehler.message + '). ' +
+         'Nach dem Deploy funktioniert das Formular.']);
+    } finally {
+      knopf.disabled = false;
+      knopf.textContent = 'Nachricht senden';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
