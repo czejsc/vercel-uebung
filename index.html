@@ -24,12 +24,19 @@
   dd { margin:0; font-weight:700; }
   .ok { color:var(--signal); }
   .fehler { color:#B3261E; font-weight:700; margin-top:1.5em; }
+  figure { margin:0 0 2em; }
+  figure img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:10px; }
+  figcaption { font-size:.95rem; color:var(--steel); margin-top:.7em; }
 </style>
 </head>
 <body>
 <main>
   <h1>hallo vercel test</h1>
   <p>Diese Seite ist statisch. Der Knopf fragt eine kleine Serverfunktion unter <code>/api/hallo</code>, die bei Vercel läuft und meldet, aus welcher Umgebung sie antwortet.</p>
+  <figure>
+    <img src="bilder/edge-globus.svg" alt="Wireframe-Globus mit sechs vernetzten Serverstandorten; einer davon pulsiert grün.">
+    <figcaption>Irgendwo auf diesem Netz läuft die Funktion. Welcher Knoten antwortet, verrät der Knopf.</figcaption>
+  </figure>
   <button id="frage">Server fragen</button>
   <div id="ausgabe" aria-live="polite"></div>
 </main>

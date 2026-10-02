@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" role="img"
+     aria-label="Wireframe-Globus mit vernetzten Serverstandorten, einer davon hervorgehoben">
+  <title>Edge-Netz</title>
+  <style>
+    .paper { fill:#DEE6EC; }
+    .wire  { fill:none; stroke:#C5CFD7; stroke-width:1.4; }
+    .wire-strong { fill:none; stroke:#5B6B78; stroke-width:2; }
+    .bogen { fill:none; stroke:#5B6B78; stroke-width:1.6; stroke-dasharray:5 7; stroke-linecap:round; opacity:.75; }
+    .knoten { fill:#14212B; }
+    .signal { fill:#1F7A4D; }
+    .puls { fill:none; stroke:#1F7A4D; stroke-width:2; transform-origin:470px 182px; }
+    .p1 { animation:puls 3.2s ease-out infinite; }
+    .p2 { animation:puls 3.2s ease-out .9s infinite; }
+    @keyframes puls {
+      0%   { transform:scale(.35); opacity:.9; }
+      100% { transform:scale(1);   opacity:0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .p1, .p2 { animation:none; opacity:.35; }
+    }
+  </style>
+
+  <rect class="paper" width="960" height="460" rx="10"/>
+
+  <g transform="translate(480 230)">
+    <!-- Laengengrade -->
+    <circle class="wire-strong" r="170"/>
+    <ellipse class="wire" rx="128" ry="170"/>
+    <ellipse class="wire" rx="76"  ry="170"/>
+    <ellipse class="wire" rx="24"  ry="170"/>
+    <!-- Breitengrade -->
+    <ellipse class="wire" rx="170" ry="51"/>
+    <ellipse class="wire" rx="160" ry="48" cy="-58"/>
+    <ellipse class="wire" rx="160" ry="48" cy="58"/>
+    <ellipse class="wire" rx="130" ry="39" cy="-110"/>
+    <ellipse class="wire" rx="130" ry="39" cy="110"/>
+    <ellipse class="wire" rx="84"  ry="25" cy="-148"/>
+    <ellipse class="wire" rx="84"  ry="25" cy="148"/>
+  </g>
+
+  <!-- Verbindungen vom hervorgehobenen Knoten zu den uebrigen -->
+  <g class="bogen">
+    <path d="M470 182 Q 410 100 348 128"/>
+    <path d="M470 182 Q 560 120 604 158"/>
+    <path d="M470 182 Q 560 230 582 288"/>
+    <path d="M470 182 Q 420 260 386 302"/>
+    <path d="M470 182 Q 300 210 212 196"/>
+    <path d="M470 182 Q 690 196 748 246"/>
+  </g>
+
+  <!-- Standorte -->
+  <g class="knoten">
+    <circle cx="348" cy="128" r="6"/>
+    <circle cx="604" cy="158" r="6"/>
+    <circle cx="582" cy="288" r="6"/>
+    <circle cx="386" cy="302" r="6"/>
+    <circle cx="212" cy="196" r="5"/>
+    <circle cx="748" cy="246" r="5"/>
+  </g>
+
+  <!-- antwortende Region -->
+  <circle class="puls p1" cx="470" cy="182" r="34"/>
+  <circle class="puls p2" cx="470" cy="182" r="34"/>
+  <circle class="signal" cx="470" cy="182" r="9"/>
+</svg>
