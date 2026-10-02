@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vercel-Übung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#E9EEF2; --ink:#14212B; --steel:#5B6B78; --line:#C5CFD7; --signal:#1F7A4D; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; background:var(--paper); color:var(--ink);
+         font-family:'Bricolage Grotesque', system-ui, sans-serif; display:grid; place-items:center; padding:24px; }
+  main { width:100%; max-width:640px; }
+  h1 { font-size:clamp(2.6rem, 8vw, 4.5rem); line-height:1; margin:0 0 .4em; font-weight:800; letter-spacing:-.02em; }
+  p { font-size:1.15rem; line-height:1.55; color:var(--steel); margin:0 0 1.5em; max-width:34em; }
+  button { font:inherit; font-weight:700; font-size:1.05rem; background:var(--ink); color:#fff; border:0;
+           padding:14px 26px; border-radius:6px; cursor:pointer; }
+  button:focus-visible { outline:3px solid var(--signal); outline-offset:3px; }
+  button:disabled { opacity:.6; cursor:wait; }
+  dl { display:grid; grid-template-columns:auto 1fr; gap:10px 24px; margin:2em 0 0; padding:20px 0 0;
+       border-top:2px solid var(--line); font-size:1.05rem; }
+  dt { color:var(--steel); }
+  dd { margin:0; font-weight:700; }
+  .ok { color:var(--signal); }
+  .fehler { color:#B3261E; font-weight:700; margin-top:1.5em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Läuft auf Vercel.</h1>
+  <p>Diese Seite ist statisch. Der Knopf fragt eine kleine Serverfunktion unter <code>/api/hallo</code>, die bei Vercel läuft und meldet, aus welcher Umgebung sie antwortet.</p>
+  <button id="frage">Server fragen</button>
+  <div id="ausgabe" aria-live="polite"></div>
+</main>
+<script>
+  const knopf = document.getElementById('frage');
+  const ausgabe = document.getElementById('ausgabe');
+  const felder = { nachricht:'Antwort', zeit:'Serverzeit', umgebung:'Umgebung', region:'Region', branch:'Branch', commit:'Commit' };
+  knopf.addEventListener('click', async () => {
+    knopf.disabled = true;
+    knopf.textContent = 'Frage Server …';
+    try {
+      const antwort = await fetch('/api/hallo');
+      if (!antwort.ok) throw new Error('Status ' + antwort.status);
+      const daten = await antwort.json();
+      ausgabe.innerHTML = '<dl>' + Object.entries(felder).map(([k, label]) =>
+        '<dt>' + label + '</dt><dd' + (k === 'umgebung' ? ' class="ok"' : '') + '>' + String(daten[k] ?? '–')
+          .replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])) + '</dd>').join('') + '</dl>';
+    } catch (e) {
+      ausgabe.innerHTML = '<p class="fehler">Die Serverfunktion antwortet nicht (' + e.message + '). Lokal ohne Vercel gibt es /api/hallo nicht – nach dem Deploy funktioniert es.</p>';
+    } finally {
+      knopf.disabled = false;
+      knopf.textContent = 'Server fragen';
+    }
+  });
+</script>
+</body>
+</html>
