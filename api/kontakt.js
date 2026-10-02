@@ -11,7 +11,7 @@ const THEMEN = {
   imkerkurs: 'Imkerkurs im Jahreslauf',
   patenschaft: 'Bienenpatenschaft',
   honig: 'Honig kaufen',
-  schule: 'Termin fuer Schule oder Kita',
+  schule: 'Termin für Schule oder Kita',
   schwarm: 'Schwarm melden',
   sonstiges: 'Etwas anderes'
 };
@@ -59,10 +59,10 @@ export default async function handler(req, res) {
 
   const fehler = [];
   if (name.length < 2) fehler.push('Bitte einen Namen mit mindestens zwei Zeichen angeben.');
-  if (!EMAIL_MUSTER.test(email)) fehler.push('Die E-Mail-Adresse sieht nicht vollstaendig aus.');
-  if (!thema) fehler.push('Bitte ein Thema aus der Liste waehlen.');
+  if (!EMAIL_MUSTER.test(email)) fehler.push('Die E-Mail-Adresse sieht nicht vollständig aus.');
+  if (!thema) fehler.push('Bitte ein Thema aus der Liste wählen.');
   if (nachricht.length < 10) fehler.push('Die Nachricht sollte mindestens zehn Zeichen lang sein.');
-  if (!einwilligung) fehler.push('Ohne Einwilligung zur Speicherung koennen wir nicht antworten.');
+  if (!einwilligung) fehler.push('Ohne Einwilligung zur Speicherung können wir nicht antworten.');
 
   if (fehler.length) {
     return res.status(400).json({ fehler });
